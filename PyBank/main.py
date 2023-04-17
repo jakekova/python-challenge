@@ -1,6 +1,7 @@
 import csv
 import statistics
 import sys
+# set up path and csv access
 
 path = "Resources/budget_data.csv"
 
@@ -9,7 +10,7 @@ csv_reader = csv.reader(csv_file)
 
 next(csv_file)
 
-
+# define varibles
 months = 0
 net_total = 0
 greatest_inc = 0
@@ -17,6 +18,7 @@ greatest_dec = 0
 avg_list = []
 b = 0
 
+#count months by each row, a continual total, list of changes that i will take the avg of, and an if statement to be locating the largest and smallest changes
 
 for row in csv_reader:
     months += 1
@@ -48,6 +50,8 @@ print(f'Greatest Increase in Profits: {greatest_inc_date} : ${greatest_inc}')
 print('')
 print(f'Greatest Decrease in Profits: {greatest_dec_date} : ${greatest_dec}')
 
+# printed to console above
+# pathed and into a text file in the other folder
 
 with open("analysis/analysis.txt", "w") as txt_file:
     txt_file.write("Financial Analysis \n"
