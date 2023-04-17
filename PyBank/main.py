@@ -47,4 +47,22 @@ print('')
 print(f'Greatest Increase in Profits: {greatest_inc_date} : ${greatest_inc}')
 print('')
 print(f'Greatest Decrease in Profits: {greatest_dec_date} : ${greatest_dec}')
-print(avg_list)
+
+
+with open("analysis/analysis.txt", "w") as txt_file:
+    txt_file.write("Financial Analysis \n"
+                   "\n"
+                   "--------------------- \n"
+                   "\n"
+                   f"Total Months: {months} \n"
+                   "\n"
+                   f'Total: ${net_total} \n'
+                   "\n"
+                   f'Average Change: ${round(statistics.fmean(avg_list), 2)} \n'
+                   "\n"
+                   f'Greatest Increase in Profits: {greatest_inc_date} : ${greatest_inc} \n'
+                   "\n"
+                   f'Greatest Decrease in Profits: {greatest_dec_date} : ${greatest_dec}'
+    )
+
+    
